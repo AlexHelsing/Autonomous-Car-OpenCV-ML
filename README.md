@@ -1,4 +1,39 @@
-![pipeline status](https://git.chalmers.se/courses/dit638/students/2024-group-16/badges/main/pipeline.svg)
+## Introduction
+
+This project showcases the development of software features enabling a miniature car to drive autonomously using two distinct approaches: computer vision and machine learning. Our goal was to design, implement, and test these algorithms in a controlled environment, leveraging data from an RC vehicle equipped with various sensors such as a camera, infrared sensors, magnetic field sensors.
+
+## Project Overview
+In this project, we developed two main approaches to autonomous driving for a miniature car, focusing on different driving directions and technologies.
+
+### Clockwise Approach: Computer Vision
+The counter-clockwise driving algorithm utilizes computer vision techniques, primarily using the OpenCV library. The core of this approach involves tracking cones on the track using HSV filters and object detection methods. Our computer vision approach starts by determining the track direction—clockwise or counter-clockwise—based on the placement of blue and yellow cones in the initial frames. We split the image into left and right parts and use HSV color filtering to isolate the cones, which helps us identify their positions accurately regardless of lighting conditions.
+
+To enhance cone visibility and reduce noise, we apply Gaussian blur, followed by erosion and dilation. This preprocessing ensures that the cones stand out clearly from the background. After cleaning the image, we identify the contours of the cones and calculate their geometric centers (centroids).
+
+We then divide the image into left, center, and right areas to determine the car's steering direction. Knowing the track direction, we assess the position of the cones: if a cone appears in an unexpected area, the car adjusts its steering accordingly. For example, in a clockwise track, blue cones should be on the left. If a blue cone is detected in the right area of the left section, the car steers right. Conversely, yellow cones influence left turns. The position of the cones along the X-axis determines the sharpness of the steering angle, allowing the car to navigate the track smoothly and autonomously.
+
+### Counter-Clockwise Approach: Machine Learning
+In our machine learning approach, we used data from the angular velocity and ground steering sensors to predict steering angles. We synchronized the data by rounding timestamps and merging records to align the sensor data accurately. This preprocessed data was fed into a Random Forest Regression model, trained on historical data to predict steering angles.
+
+After training, we evaluated the model's accuracy using reserved test data and continuously fine-tuned it. The model was then deployed to a steering prediction service that processed real-time sensor data and predicted steering angles, which were sent back to the core service for execution.
+
+We used scikit-learn for its flexibility in testing different algorithms, ultimately finding that Random Forest provided the best accuracy (25-45%). This approach allowed us to effectively navigate the track by leveraging sensor data correlations.
+
+### Key Features
+- Algorithm Development: Designed and implemented algorithms for autonomous driving using computer vision and machine learning techniques.
+- Data Utilization: Utilized data from scaled vehicles to develop, test, and evaluate the driving algorithms.
+- Computer Vision Techniques: Employed HSV filters and object detection techniques to track cones and guide the car's movements.
+- Machine Learning Model: Trained a machine learning model on previous track data to predict steering actions for autonomous navigation.
+- Testing and Evaluation: Rigorously tested and evaluated the algorithms to ensure they meet performance requirements.
+- Documentation: Documented the entire development process, including conceptual ideas, algorithmic fundamentals, system architecture, implementation details, test methods, and project retrospectives.
+- This project demonstrates the integration of theoretical knowledge and practical skills in developing autonomous driving technologies. Through this hands-on experience, we gained valuable insights into the complexities and intricacies of self-driving vehicle development.
+
+![Autonomous Car](https://i.ibb.co/vJ5dKxf/ezgif-3-b4229a2a26.webp)
+
+![Autonomous Car OpenCV](https://i.ibb.co/PMYcf27/ezgif-7-e2260e26a0.webp)
+
+![System Design](https://i.imgur.com/BNyVE5Y.png)
+
 
 ## Prerequisites
 
