@@ -28,7 +28,7 @@ We used scikit-learn for its flexibility in testing different algorithms, ultima
 - Documentation: Documented the entire development process, including conceptual ideas, algorithmic fundamentals, system architecture, implementation details, test methods, and project retrospectives.
 - This project demonstrates the integration of theoretical knowledge and practical skills in developing autonomous driving technologies. Through this hands-on experience, we gained valuable insights into the complexities and intricacies of self-driving vehicle development.
 
-![Autonomous Car](https://i.ibb.co/vJ5dKxf/ezgif-3-b4229a2a26.webp)
+![Autonomous Car](https://i.ibb.co/yWq5dkg/ezgif-4-5546169125.webp)
 
 ![Autonomous Car OpenCV](https://i.ibb.co/PMYcf27/ezgif-7-e2260e26a0.webp)
 
