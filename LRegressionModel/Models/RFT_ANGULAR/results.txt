@@ -1,0 +1,10 @@
+45% 145043      20% when not included in training data, 25% when not included but 0.5s rounded, Grid search 0.5s = 24.3%
+35% 150001                      blue on right
+26.6272% 144821                 blue on right
+5% 145641                       blue is on left
+3% 145233                       blue is on left
+
+
+
+043 34.18 full dataset
+043 35.814 counter dataset

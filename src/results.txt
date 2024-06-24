@@ -1,0 +1,5 @@
+45% 145043        using both? or wut      counter-clockwise 
+37% 150001          using ML              counter-clockwise                   
+27.21% 144821       using ML               counter-clockwise
+25.062% 145641                       clockwise
+24.15% 145233                       clockwise
